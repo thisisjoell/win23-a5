@@ -30,4 +30,13 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   exit 1
 fi
 
+if ! $CALCULATOR 10 + 30; then
+  echo 'Wrong the answer is not working'
+  exit 1
+fi
+
+if ! $CALCULATOR 50 - 2; then
+  echo 'Answer is wrong output not matchd'
+  exit 1
+fi
 
