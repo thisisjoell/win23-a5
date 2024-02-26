@@ -29,3 +29,21 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
   exit 1
 fi
+
+output=$(echo "46 + 3" | ./calculator)
+expected="The result of your operation is 49."
+if [[ "$output" == *"$expected"* ]]; then
+  echo "The addition test passed."
+else
+  echo "The sddition test failed. The expected was '$expected', got '$output'"
+  exit 1
+fi
+
+output=$(echo "50 - 5" | ./calculator)
+expected="The result of your operation is 45."
+if [[ "$output" == *"$expected"* ]]; then
+    echo "The subtraction test passed."
+else
+  echo "The subtraction test failed.The expected was '$expected', got '$output'"
+  exit 1
+fi
